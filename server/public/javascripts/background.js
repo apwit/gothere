@@ -14,8 +14,10 @@ now.update = function () {
 
 now.receiveGoTo = function (url) {
 
-  chrome.windows.create({
-    url: url
+  chrome.windows.getLastFocused(function (window) {
+
+    console.log(window);
+
   });
 
 };
