@@ -52,7 +52,12 @@ everyone.now.register = function (name) {
 
   everyone.now.users[clientId] = name;
   clients[clientId] = this;
-  everyone.now.addUser(name, clientId);
+
+  try {
+    everyone.now.addUser(name, clientId);
+  } catch (err) {
+    // Not a big deal, just means that nobody else is connected yet
+  }
 
 };
 
