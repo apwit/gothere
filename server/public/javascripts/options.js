@@ -1,8 +1,15 @@
+if (!localStorage.name) {
+
+  var name = localStorage.name = prompt("Name please: ");
+  chrome.extension.sendRequest({name: name});
+
+}
+
 now.ready(function () {
 
   console.log(now);
 
-$('#interface').replaceWith('<table id="interface"></table>');
+  $('#interface').replaceWith('<table id="interface"></table>');
 
   for (var key in now.users) {
 

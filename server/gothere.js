@@ -25,7 +25,7 @@ app.get('/update', function (req, res) {
 
 });
 
-app.listen(3000);
+app.listen(80);
 
 console.log('Running express');
 
@@ -60,9 +60,12 @@ everyone.now.register = function (name) {
 everyone.disconnected(function () {
 
   var clientId = this.user.clientId;
-  delete everyone.now.users[clientId];
-  delete clients[clientId];
-  everyone.now.removeUser(clientId);
+
+  if (clients[clientId]) {
+    delete everyone.now.users[clientId];
+    delete clients[clientId];
+    everyone.now.removeUser(clientId);
+  }
 
 });
 

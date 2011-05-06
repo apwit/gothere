@@ -1,9 +1,7 @@
-localStorage.name = "Brendan";
-
 now.ready(function () {
 
-  console.log('now is read');
-  now.register("BOBSAGGOT");
+  if (!localStorage.name) return;
+  now.register(localStorage.name);
 
 });
 
@@ -16,10 +14,15 @@ now.update = function () {
 
 now.receiveGoTo = function (url) {
 
-  console.log("Going to: " + url);
-
   chrome.windows.create({
     url: url
   });
 
 };
+
+chrome.extension.onRequest.addListener(function (request, sender, sendResponse) {
+
+  now.register(request.name);
+  localStorage.name = request.name;
+
+});
