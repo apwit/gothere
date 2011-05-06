@@ -1,0 +1,7 @@
+startup_message off
+bindkey -k k8 next
+bindkey -k k7 prev
+defscrollback 1000
+hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y " 
+bell_msg ""
+nethack on
