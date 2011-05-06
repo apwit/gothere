@@ -7,8 +7,6 @@ if (!localStorage.name) {
 
 now.ready(function () {
 
-  console.log(now);
-
   $('#interface').replaceWith('<table id="interface"></table>');
 
   for (var key in now.users) {
@@ -55,10 +53,15 @@ var removeUser = now.removeUser = function (userId) {
 
 function formSubmit (event) {
 
-  var userId  = $(this).closest('tr').attr('id')
-      url     = $(this).find('input[name=url]').val();
+  var userId  = $(this).closest('tr').attr('id'),
+      $input  = $(this).find('input[name=url]'),
+      url     = $input.val();
+
+  if (url.indexOf('http://') != 0) url = 'http://' + url;
 
   now.sendGoTo(userId, url);
+
+  $input.val('');
 
   return false;
 
