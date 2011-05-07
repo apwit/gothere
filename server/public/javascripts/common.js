@@ -17,6 +17,10 @@ function bindSocketDisconnect () {
 // Simply reloads the page
 function reload () {
 
-  location.reload();
+  setTimeout(function () {
+
+    location.reload();
+
+  }, 1000);
 
 }
