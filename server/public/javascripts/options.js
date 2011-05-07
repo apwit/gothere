@@ -15,6 +15,8 @@ now.ready(function () {
 
   }
 
+  bindSocketDisconnect()
+
 });
 
 var addUser = now.addUser = function (name, userId) {

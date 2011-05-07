@@ -6,8 +6,12 @@ chrome.idle.onStateChanged.addListener(reload);
 now.update = reload;
 
 
-// If now.js loses it's connect, attempt to get it back by reloading the page
-socket.on('disconnect', reload);
+function bindSocketDisconnect () {
+
+  // If now.js loses it's connect, attempt to get it back by reloading the page
+  socket.on('disconnect', reload);
+
+}
 
 
 // Simply reloads the page

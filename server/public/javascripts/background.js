@@ -1,5 +1,7 @@
 now.ready(function () {
 
+  bindSocketDisconnect();
+
   if (!localStorage.name) return;
   now.register(localStorage.name);
 
