@@ -13,6 +13,7 @@ socket.on('disconnect', reload);
 // Simply reloads the page
 function reload () {
 
-  location.reload();
+  console.log("RELOADING");
+  //location.reload();
 
 }
