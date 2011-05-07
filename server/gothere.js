@@ -68,7 +68,9 @@ everyone.disconnected(function () {
   if (clients[clientId]) {
     everyone.now.users[clientId] = null;
     clients[clientId] = null;
-    everyone.now.removeUser(clientId);
+    try {
+      everyone.now.removeUser(clientId);
+    } catch (e) {}
   }
 
 });
@@ -77,7 +79,13 @@ everyone.disconnected(function () {
 everyone.now.sendGoTo = function (userId, url) {
 
   var client = clients[userId];
-  if (client) client.now.receiveGoTo(url);
+  if (client) {
+
+    try {
+      client.now.receiveGoTo(url);
+    } catch (e) {}
+
+  }
 
 };
 
