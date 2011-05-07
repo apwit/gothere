@@ -81,7 +81,4 @@ everyone.now.sendGoTo = function (userId, url) {
 
 };
 
-// Used to keep connections alive
-everyone.now.ping = function () {}
-
 console.log('Running now.js');
