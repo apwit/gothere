@@ -17,15 +17,10 @@ now.ready(function () {
 
 });
 
-// Server-initiated updates
-now.update = function () {
-
-  location.reload();
-
-};
-
-
 var addUser = now.addUser = function (name, userId) {
+
+  // If for some reason these get fucked, don't show them
+  if (!name || !userId) return false;
 
   // Set up the row and add the user's name to it
   var $row = $('<tr id="' + userId + '" />');
@@ -41,14 +36,14 @@ var addUser = now.addUser = function (name, userId) {
   // Add the whole row to the table
   $('#interface').append($row);
 
-}
+};
 
 
 var removeUser = now.removeUser = function (userId) {
 
   $('#' + userId).remove();
 
-}
+};
 
 
 function formSubmit (event) {

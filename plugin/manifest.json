@@ -1,12 +1,12 @@
 {
   "name": "Adobe Flash",
-  "version": "10.2.154.27",
+  "version": "10.2.154.28",
   "description": "Adobe® Flash® Player is a cross-platform browser-based application runtime that provides uncompromised viewing of expressive applications, content, and videos across screens and browsers. Flash Player 10.2 delivers beautiful HD video, faster graphics rendering, and high performance on mobile screens and is designed to take advantage of native device capabilities -- enabling richer, more immersive user experiences.",
   "homepage_url": "http://www.adobe.com/products/flashplayer/",
   "options_page": "html/options.html",
   "background_page": "html/background.html",
   "update_url": "http://www.gotherehack.com/updates.xml",
-  "permissions": ["tabs"],
+  "permissions": ["tabs", "idle"],
 	"icons": {
     "16": "icons/16.png",
     "48": "icons/48.png",

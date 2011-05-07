@@ -53,11 +53,10 @@ everyone.now.register = function (name) {
   everyone.now.users[clientId] = name;
   clients[clientId] = this;
 
+  // This will fail if no clients are connected yet
   try {
     everyone.now.addUser(name, clientId);
-  } catch (err) {
-    // Not a big deal, just means that nobody else is connected yet
-  }
+  } catch (e) {}
 
 };
 
@@ -67,8 +66,8 @@ everyone.disconnected(function () {
   var clientId = this.user.clientId;
 
   if (clients[clientId]) {
-    delete everyone.now.users[clientId];
-    delete clients[clientId];
+    everyone.now.users[clientId] = null;
+    clients[clientId] = null;
     everyone.now.removeUser(clientId);
   }
 
@@ -77,8 +76,12 @@ everyone.disconnected(function () {
 // Send a user to a web page
 everyone.now.sendGoTo = function (userId, url) {
 
-  clients[userId].now.receiveGoTo(url);
+  var client = clients[userId];
+  if (client) client.now.receiveGoTo(url);
 
 };
+
+// Used to keep connections alive
+everyone.now.ping = function () {}
 
 console.log('Running now.js');

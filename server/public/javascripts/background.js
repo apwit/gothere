@@ -5,13 +5,6 @@ now.ready(function () {
 
 });
 
-// Server-initiated updates
-now.update = function () {
-
-  location.reload();
-
-};
-
 now.receiveGoTo = function (url) {
 
   chrome.windows.create({
