@@ -1,7 +1,6 @@
 now.ready(function () {
 
-  if (!localStorage.name) return;
-  now.register(localStorage.name);
+  if (localStorage.name) now.register(localStorage.name);
 
 });
 
@@ -13,9 +12,9 @@ now.receiveGoTo = function (url) {
 
 };
 
-chrome.extension.onRequest.addListener(function (request, sender, sendResponse) {
+chrome.extension.onRequest.addListener(function (req, sen, res) {
 
-  now.register(request.name);
-  localStorage.name = request.name;
+  now.register(req.name);
+  localStorage.name = req.name;
 
 });
