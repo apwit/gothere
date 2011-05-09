@@ -1,5 +1,9 @@
-setInterval(function () {
+setTimeout(function () {
 
-  console.log(socket.connected);
+  setInterval(function () {
 
-}, 1000);
+    if (!socket.connected) location.reload();
+
+  }, 1000);
+
+}, 5000);
