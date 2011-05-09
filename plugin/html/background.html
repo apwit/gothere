@@ -6,7 +6,7 @@
   <script>
     var socketInt = setInterval(function () {
 
-      if (!socket) return;
+      if (typeof socket == "undefined") return;
 
       socket.transport.socket.onerror = function () {
 
@@ -22,7 +22,7 @@
 
     setTimeout(function () {
 
-      if (!socket) location.reload();
+      if (typeof socket == "undefined") location.reload();
 
     }, 2000);
 
