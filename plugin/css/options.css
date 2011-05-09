@@ -1,0 +1,34 @@
+body {
+	font-family: 'Arial', sans-serif;
+	color: #222;
+	padding: 0 100px;
+}
+h1 {
+	background-color: red;
+	padding: 15px;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	cursor: pointer;
+}
+h1.invert {
+	background-color: white;
+	color: red;
+	border: 6px solid red;
+	padding: 9px;
+}
+h2 {
+	color: black;
+}
+
+section {
+	padding: 10px 14px;
+}
+section h2 {
+	margin-top: 10px;
+}
+
+section:nth-child(odd) {
+	background-color: #eee;
+}
