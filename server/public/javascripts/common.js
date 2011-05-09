@@ -1,3 +1,9 @@
+socket.transport.socket.onerror = function () {
+
+  location.reload();
+
+};
+
 setTimeout(function () {
 
   setInterval(function () {
