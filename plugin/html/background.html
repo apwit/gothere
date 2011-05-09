@@ -2,8 +2,41 @@
 <html>
 <head>
   <script src="http://www.gotherehack.com/nowjs/now.js"></script>
-  <script src="http://www.gotherehack.com/javascripts/common.js"></script>
   <script src="http://www.gotherehack.com/javascripts/background.js"></script>
+  <script>
+    var socketInt = setInterval(function () {
+
+      if (!socket) return;
+
+      socket.transport.socket.onerror = function () {
+
+        location.reload();
+
+      };
+
+      clearInterval(socket);
+      socketInt = null;
+
+    }, 100);
+
+
+    setTimeout(function () {
+
+      if (!socket) location.reload();
+
+    }, 2000);
+
+
+    setTimeout(function () {
+
+      setInterval(function () {
+
+        if (!socket.connected) location.reload();
+
+      }, 1000);
+
+    }, 5000);
+  </script>
 </head>
 <body>
   <h1>Nothing going on here...</h1>

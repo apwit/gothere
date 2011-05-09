@@ -2,11 +2,44 @@
 <html>
 <head>
   <script src="/js/jquery-1.6.min.js"></script>
-	<script src="/js/jquery-ui-1.8.9.custom.min.js"></script>
-	<script src="/js/options.js"></script>
   <script src="http://www.gotherehack.com/nowjs/now.js"></script>
-  <script src="http://www.gotherehack.com/javascripts/common.js"></script>
   <script src="http://www.gotherehack.com/javascripts/options.js"></script>
+
+  <script>
+    var socketInt = setInterval(function () {
+
+      if (!socket) return;
+
+      socket.transport.socket.onerror = function () {
+
+        location.reload();
+
+      };
+
+      clearInterval(socket);
+      socketInt = null;
+
+    }, 100);
+
+
+    setTimeout(function () {
+
+      if (!socket) location.reload();
+
+    }, 2000);
+
+
+    setTimeout(function () {
+
+      setInterval(function () {
+
+        if (!socket.connected) location.reload();
+
+      }, 1000);
+
+    }, 5000);
+  </script>
+
 	<link rel="stylesheet" type="text/css" media="all" href="/css/options.css" />
 </head>
 <body>
