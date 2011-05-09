@@ -1,8 +1,17 @@
-socket.transport.socket.onerror = function () {
+var socketInt = setInterval(function () {
 
-  location.reload();
+  if (!socket) return;
 
-};
+  socket.transport.socket.onerror = function () {
+
+    location.reload();
+
+  };
+
+  clearInterval(socket);
+
+}, 100);
+
 
 setTimeout(function () {
 
