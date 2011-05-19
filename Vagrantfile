@@ -29,4 +29,6 @@ Vagrant::Config.run do |config|
   # Assign this VM to a host only network IP, allowing you to access it
   # via the IP.
   # config.vm.network "33.33.33.10"
+
+  config.ssh.forward_agent = true
 end
