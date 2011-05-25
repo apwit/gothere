@@ -2,7 +2,7 @@
 
 GoThere is the ultimate office prank. It is a Chrome extension that allows users who have it installed to open web pages on the computer of any other user. We disguised the extension well enough so that even a developer (the primary target) wouldn't be able to find it without some serious tinkering. It was designed with fun in mind, so once a victim *does* find it, they're given the opportunity to play.
 
-If you're just interested in trying it out, [install the extension](http://gotherehack.com/plugin.crx) and click on the options page for Adobe Flash.
+If you're just interested in trying it out, install the extension and click on the options page for Adobe Flash.
 
 ## Server
 
